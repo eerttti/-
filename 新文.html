@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>医学知识检索库</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>医学知识检索库</h1>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="输入关键词进行搜索...">
+            <button type="submit">搜索</button>
+        </form>
+        <div id="results">
+            <!-- 搜索结果将在这里显示 -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+            const searchTerm = document.getElementById('searchInput').value;
+            // 这里应该是调用后端API的逻辑，获取搜索结果
+            // 为了演示，只是显示一个模拟的消息
+            document.getElementById('results').innerHTML = `<p>您搜索的关键词是：“${searchTerm}”</p><p>这里是搜索结果：</p><ul><li>结果1</li><li>结果2</li><li>结果3</li></ul>`;
+        });
+    </script>
+</body>
+</html>
